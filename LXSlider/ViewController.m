@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "LXSlider.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) LXSlider* slider;
 @end
 
 @implementation ViewController
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _slider = [[LXSlider alloc] init];
+    [self.view addSubview:_slider];
+    [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
