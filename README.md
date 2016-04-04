@@ -1,2 +1,0 @@
-# LXSlider
-LXSlider
