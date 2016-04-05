@@ -19,14 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _slider = [[LXSlider alloc] init];
+    _slider.frame = CGRectMake(17, 200, 286, 60);
     [self.view addSubview:_slider];
-    [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.width.equalTo(self.view).multipliedBy(0.8);
-        make.height.equalTo(@60);
-    }];
 
     _slider.handleCount = 5;
+    _slider.labels = [[NSArray arrayWithObjects:@"first", @"second", @"third", @"fourth", @"fifth", nil] mutableCopy];
     [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -36,7 +33,7 @@
 }
 
 - (void)sliderValueChanged: (LXSlider*)slider {
-    NSLog(@"slider.currentIndex: %u", slider.currentIndex);
+    NSLog(@"slider.currentIndex: %lu", (unsigned long)slider.currentIndex);
 }
 
 @end

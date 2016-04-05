@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name             = "LXSlider"
-  s.version          = "1.0.5"
+  s.version          = "1.1.0"
   s.summary          = "A customize UISlider."
   s.description      = <<-DESC
                        It is a marquee view used on iOS, which implement by
@@ -15,13 +15,13 @@ Objective-C.
   # s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'LXSlider/LXSlider.{h,m}'
+  s.source_files = 'LXSlider/LXSlider.{h,m}', 'LXSlider/NSString+PreferredFontSize.{h,m}'
   # s.resources = 'Assets'
 
   # s.ios.exclude_files = 'Classes/osx'
   # s.osx.exclude_files = 'Classes/ios'
   # s.public_header_files = 'Classes/**/*.h'
   s.frameworks = 'Foundation', 'CoreGraphics', 'UIKit'
-  s.dependency 'Masonry'
+  # s.dependency 'Masonry'
 
 end
