@@ -21,13 +21,22 @@
     _slider = [[LXSlider alloc] init];
     [self.view addSubview:_slider];
     [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.center.equalTo(self.view);
+        make.width.equalTo(self.view).multipliedBy(0.8);
+        make.height.equalTo(@60);
     }];
+
+    _slider.handleCount = 5;
+    [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)sliderValueChanged: (LXSlider*)slider {
+    NSLog(@"slider.currentIndex: %u", slider.currentIndex);
 }
 
 @end

@@ -11,4 +11,12 @@
 
 @interface LXSlider : UIControl
 
+@property (assign, nonatomic) NSUInteger    currentIndex;
+
+@property (nonatomic, assign) NSUInteger    handleCount;
+@property (nonatomic, strong) UIColor*      handleColor;
+@property (nonatomic, strong) UIColor*      handleBackgroundColor;
+@property (nonatomic, strong) UIColor*      bannerBackgroundColor;
+
+
 @end
